@@ -1,4 +1,4 @@
-JMP main 
+JMP main
 var1:
 	DB "GATT"
 	DB 0
