@@ -1,4 +1,4 @@
-	JMP start 
+	JMP start
 hello: DB "Hello World!" ; Variable
        DB 0	; String terminator
 
