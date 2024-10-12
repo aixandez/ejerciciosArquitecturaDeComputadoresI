@@ -1,5 +1,3 @@
-; Suma los valores de un vector
-
 JMP start
 
 vector: 
