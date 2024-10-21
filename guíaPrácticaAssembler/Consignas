@@ -1,0 +1,50 @@
+Consignas
+
+1) Indicar conceptualmente qué realiza el simulador cuando ejecuta cada una de las siguientes instrucciones:
+a) HLT
+b) MOV D, 0x02
+c) MOV A, B
+d) MOV C, [D]
+e) POP A
+f) PUSH B
+g) DB “Esto es una prueba”
+h) INC A
+i) DEC D
+j) CPM A, B
+k) JMP bucle
+l) ADD A, B
+m) SUB C, D
+n) MUL B
+o) DIV C
+
+2) Realizar en lenguaje ensamblador las siguientes operaciones guardando los resultados en el registro A:
+a) s = p + q
+b) s = p + q – r
+c) s = p + q . r
+d) s = p / q + r
+
+3) Escribir en lenguaje ensamblador las instrucciones que permitan dado 3 números calcular:
+a) El máximo de ellos
+b) El mínimo de ellos
+
+4) Se necesita realizar un programa que imprima por pantalla el valor del string
+“Hola, soy alumno de la U.N.O.”
+
+5) Realizar un programa que permita identificar si dos cadenas de caracteres son idénticas.
+
+6) Realizar un programa que sume los valores de un vector de 5 posiciones.
+
+7) Realizar un programa que multiplique los valores de un vector de 6 posiciones.
+
+8) Realizar un programa que divida los valores de un vector de 6 posiciones.
+
+9) Realizar un programa que multiplique las 2 primeras posiciones del vector, las sume con las 2 siguientes y la reste con la última. (vector de 5 posiciones).
+
+10)Realizar un programa que dado un vector de 5 posiciones multiplique la primera posición con la segunda,
+la sume con la tercera, divida con la cuarta y reste con la quinta.
+
+11) Realizar un programa que permita identificar si una cadena es palíndromo
+
+12) Realizar un programa que permita ordenar alfabéticamente una cadena de letras ej “a z r t i o r” -> a i o r t z
+
+13) Realizar un programa que ordene los valores de un vector de N posiciones, probar con N mayor a 5
