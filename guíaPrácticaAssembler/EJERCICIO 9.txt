@@ -1,0 +1,35 @@
+9) Realizar un programa que multiplique las 2 primeras posiciones del vector, las sume con las 2 siguientes y la reste con la última. (vector de 5 posiciones).
+
+JMP start
+
+vector:
+DB 3     ; Valor 1
+DB 4     ; Valor 2
+DB 5     ; Valor 3
+DB 2     ; Valor 4
+DB 10    ; Valor 5 (último valor)
+
+start:
+    MOV C, vector   ; Apunta al inicio del vector
+    MOV A, [C]      ; Carga el primer valor en A
+    INC C           ; Avanza C para apuntar al segundo valor
+    MOV B, [C]      ; Carga el segundo valor en B
+
+    ; Multiplica las dos primeras posiciones
+    MUL A, B        ; A = A * B, el resultado se almacena en A
+
+    INC C           ; Avanza C para apuntar al tercer valor
+    INC C           ; Ahora C apunta al tercer valor
+    MOV B, [C]      ; Carga el tercer valor en B
+    ADD A, B        ; Suma el tercer valor al resultado actual en A
+
+    INC C           ; Avanza C para apuntar al cuarto valor
+    MOV B, [C]      ; Carga el cuarto valor en B
+    ADD A, B        ; Suma el cuarto valor al resultado actual en A
+
+    INC C           ; Avanza C para apuntar al quinto (último) valor
+    MOV B, [C]      ; Carga el último valor en B
+    SUB A, B        ; Resta el último valor del resultado actual en A
+
+    ; Fin del programa
+    HLT             ; Detiene la ejecución

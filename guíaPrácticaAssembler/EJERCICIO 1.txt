@@ -1,0 +1,33 @@
+EJERCICIO 1
+
+1) Indicar conceptualmente qué realiza el simulador cuando ejecuta cada una de las siguientes instrucciones:
+
+a) HLT: Detiene la ejecución del programa. El simulador entra en un estado de espera sin realizar ninguna acción hasta que se reinicie o se le indique continuar.
+
+b) MOV D, 0x02: Carga el valor hexadecimal 0x02 en el registro D. Asigna el valor especificado al registro.
+
+c) MOV A, B: Copia el contenido del registro B al A. Después de esta instrucción A tendrá el mismo valor que B.
+
+d) MOV C, [D]: Carga el valor almacenado en la dirección de memoria apuntada por el registro D en el registro C. Es una operación que implica dereferenciar una dirección de memoria.
+
+e) POP A: Saca (extrae) el valor del tope de la fila y lo coloca en el registro A. Esta instrucción tambien ajusta el puntero de la fila.
+
+f) PUSH B: Coloca el contenido del registro B en la parte superior de la fila. El puntero de la fila se ajusta para reflejar el nuevo tope.
+
+g) DB “Esto es una prueba”: Define un bloque de datos en la memoria, almacenando la cadena “Esto es una prueba”. Es utilizado para almacenar texto o datos que el programa pueda utilizar.
+
+h) INC A: Incrementa el valor del registro A en 1. Si A tenía un valor de 5, después de esta instrucción A tendrá un valor de 6.
+
+i) DEC D: Decrementa el valor del registro D en 1. Si D era 3, después de esta instrucción D será 2.
+
+j) CPM A, B: Compara el contenido de los registros A y B. Se establece el estado de las banderas según si A es mayor, menor o igual a B. No modifica registro.
+
+k) JMP bucle: Salta a la etiqueta “bucle”, cambiando el flujo de ejecución del programa. Se utiliza para crear ciclos o saltos incondicionales.
+
+l) ADD A, B: Suma el contenido del registro B al registro A, y almacena el resultado en A. Por ejemplo, si A era 3 y B era 4, se convertirá en 7.
+
+m) SUB C, D: Resta el valor del registro D del registro C, y almacena el resultado en C. Si C era 5 y D era 2, se convertirá en 3.
+
+n) MUL A, B: Multiplica el contenido del registro A por el registro B y almacena el resultado en A. Si A era 2 y B era 3, a se convertirá en 6.
+
+o) DIV C: Divide el contenido del registro A por el registro C, almacenando el cociente de A y el residuo en un registro específico (depende de la arquitectura). Si A era 8 y C era 2, Se convertirá en 4 y el residuo se gestionará según las reglas de la arquitectura.

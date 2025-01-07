@@ -1,0 +1,38 @@
+10) Realizar un programa que dado un vector de 5 posiciones multiplique la primera posición con la segunda, la sume con la tercera, divida con la cuarta y reste con la quinta.
+
+JMP start
+
+vector:
+DB 10    ; Valor 1
+DB 2     ; Valor 2
+DB 8     ; Valor 3
+DB 4     ; Valor 4
+DB 5     ; Valor 5
+
+start:
+    MOV C, vector       ; Apunta al inicio del vector
+    MOV A, [C]          ; Carga el primer valor en A
+    INC C               ; Avanza C para apuntar al segundo valor
+    MOV B, [C]          ; Carga el segundo valor en B
+
+    ; Multiplicar el primer y segundo valores
+    MUL A, B            ; A = A * B, el resultado se almacena en A
+
+    INC C               ; Avanza C para apuntar al tercer valor
+    MOV B, [C]          ; Carga el tercer valor en B
+    ADD A, B            ; Suma el tercer valor al resultado en A
+
+    INC C               ; Avanza C para apuntar al cuarto valor
+    MOV B, [C]          ; Carga el cuarto valor en B
+
+    ; Dividir el resultado por el cuarto valor
+    DIV B               ; A = A / B, el cociente se almacena en A
+
+    INC C               ; Avanza C para apuntar al quinto valor
+    MOV B, [C]          ; Carga el quinto valor en B
+
+    ; Resta el quinto valor del resultado
+    SUB A, B            ; A = A - B
+
+    ; Fin del programa
+    HLT                 ; Detiene la ejecución

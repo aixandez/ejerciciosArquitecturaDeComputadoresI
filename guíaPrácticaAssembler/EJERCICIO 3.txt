@@ -1,0 +1,54 @@
+EJERCICIO 3
+
+3) Escribir en lenguaje ensamblador las instrucciones que permitan dado 3 números calcular:
+a) El máximo de ellos
+b) El mínimo de ellos
+
+    JMP start
+
+; Definición del vector de datos
+vector: 
+    DB 8       ; Valor 1
+    DB 4       ; Valor 2
+    DB 6       ; Valor 3
+    DB 1       ; Valor 4
+    DB 15      ; Valor 5
+    DB '/'     ; Terminador
+
+min: DB 0xFF   ; Inicialización del valor mínimo (empieza con un valor alto)
+max: DB 0      ; Inicialización del valor máximo (empieza con un valor bajo)
+
+start:
+    MOV A, vector    ; Apunta `A` al inicio del vector
+    MOV B, [A]       ; Carga el primer valor del vector en `B`
+    MOV [min], B     ; Inicializa el primer valor como mínimo
+    MOV [max], B     ; Inicializa el primer valor como máximo
+    INC A            ; Avanza `A` al siguiente elemento del vector
+
+.loop:
+    MOV B, [A]       ; Carga el valor actual del vector en `B`
+    CMP B, '/'       ; Compara el valor actual con el terminador '/'
+    JE .fin          ; Si es el terminador, salta al final
+
+    ; Comparación para el mínimo
+    MOV C, [min]     ; Carga el valor actual de `min` en `C`
+    CMP B, C         ; Compara el valor en `B` con el mínimo actual
+    JB .actualizar_min ; Si `B` es menor, actualiza `min`
+
+.actualizar_min:
+    MOV [min], B     ; Actualiza el valor mínimo con `B`
+
+    ; Comparación para el máximo
+    MOV D, [max]     ; Carga el valor actual de `max` en `D`
+    CMP B, D         ; Compara el valor en `B` con el máximo actual
+    JA .actualizar_max ; Si `B` es mayor, actualiza `max`
+
+.actualizar_max:
+    MOV [max], B     ; Actualiza el valor máximo con `B`
+
+    ; Continua al siguiente elemento
+    INC A            ; Avanza `A` al siguiente valor del vector
+    JMP .loop        ; Repite el bucle para el siguiente elemento
+
+.fin:
+    HLT              ; Fin del programa

@@ -1,0 +1,43 @@
+EJERCICIO 13
+
+13) Realizar un programa que ordene los valores de un vector de N posiciones, probar con N mayor a 5.
+
+	JMP start
+; salta a start luego de la declaración de variables
+vec: DB 8 ; variable
+DB	4 ; variable
+DB	6 ; variable
+DB	1 ; variable
+DB	15 ; variable
+DB '/' ; terminator
+
+start:
+	MOV A, vec
+	MOV B, A
+	INC B
+
+.loop2:
+.loop:
+	MOV C, [A]
+	MOV D, [B]
+	CMP D, C
+	JA salto
+	MOV A, [D]
+	MOV B, [C]
+
+	salto:
+	INC A
+	MOV B, A
+	INC B
+
+	CMP D, '/'
+	JNZ .loop
+
+	MOV A, 02
+	MOV B, A
+	INC B
+
+	CMP B, A
+	JA .loop2:
+
+HLT

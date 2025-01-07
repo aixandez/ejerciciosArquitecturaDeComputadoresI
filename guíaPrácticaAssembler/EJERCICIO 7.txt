@@ -1,0 +1,29 @@
+7) Realizar un programa que multiplique los valores de un vector de 6 posiciones.
+
+
+JMP start
+
+vector:
+DB 2     ; Valor 1
+DB 3     ; Valor 2
+DB 4     ; Valor 3
+DB 5     ; Valor 4
+DB 6     ; Valor 5
+DB 7     ; Valor 6
+DB '/'   ; Fin del vector
+
+start:
+    MOV C, vector  ; Apunta al inicio del vector (posición del primer valor)
+    MOV A, 1       ; Inicializa el acumulador A en 1 (neutro para multiplicación)
+
+.loop:
+    MOV D, [C]     ; Carga el valor apuntado por C en D
+    CMP D, '/'     ; Compara el valor en D con el delimitador '/'
+    JZ fin         ; Si es '/', salta al final del programa
+
+    MUL A, D       ; Multiplica el acumulador A por el valor D
+    INC C          ; Incrementa el puntero C para apuntar al siguiente valor
+    JMP .loop      ; Repite el bucle hasta que se encuentra el delimitador
+
+fin:
+    HLT            ; Detiene la ejecución
